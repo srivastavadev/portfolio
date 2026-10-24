@@ -1,55 +1,27 @@
-function Skills() {
+import { skills } from "../data";
 
-  const skills = [
-    {
-      name: "HTML",
-      percentage: "95%"
-    },
-    {
-      name: "CSS",
-      percentage: "90%"
-    },
-    {
-      name: "JavaScript",
-      percentage: "85%"
-    },
-    {
-      name: "React",
-      percentage: "80%"
-    },
-    {
-      name: "UI/UX Design",
-      percentage: "75%"
-    }
-  ];
-
+export default function Skills() {
   return (
-    <section className="skills" id="skills">
+    <section className="section" id="skills">
+      <div className="section-heading">
+        <p className="eyebrow">WHAT I WORK WITH</p>
+        <h2>My <span>Skills</span></h2>
+        <p>Technologies I am learning and using in my projects.</p>
+      </div>
 
-      <h2>💻 My Skills</h2>
-
-      {skills.map((skill) => (
-
-        <div className="skill" key={skill.name}>
-
-          <div className="skill-title">
-            <span>{skill.name}</span>
-            <span>{skill.percentage}</span>
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div className="skill-card" key={skill}>
+            <span className="skill-number">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3>{skill}</h3>
+            <div className="skill-line">
+              <span />
+            </div>
           </div>
-
-          <div className="progress">
-            <div
-              className="progress-bar"
-              style={{ width: skill.percentage }}
-            ></div>
-          </div>
-
-        </div>
-
-      ))}
-
+        ))}
+      </div>
     </section>
   );
 }
-
-export default Skills;

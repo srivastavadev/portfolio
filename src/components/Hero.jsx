@@ -1,55 +1,45 @@
-function Hero() {
+import { portfolio } from "../data";
+
+export default function Hero() {
   return (
-    <section className="hero" id="home">
-
+    <section className="hero section" id="home">
       <div className="hero-content">
-
-        <p className="hello">Hello, I'm</p>
+        <p className="eyebrow">HELLO, I'M</p>
 
         <h1>
-          Dev <span>Srivastav</span>
+          {portfolio.name.split(" ")[0]}{" "}
+          <span>{portfolio.name.split(" ").slice(1).join(" ")}</span>
         </h1>
 
-        <h2>
-          BCA | CS Student | FullStack Developer 
-        </h2>
-
-        <p className="description">
-          I build responsive, user-friendly websites and
-          web applications with modern technologies.
-          Passionate about clean code and great design.
+        <h2>{portfolio.role}</h2>
+        <p className="hero-description">
+          {portfolio.tagline}
         </p>
 
-        <div className="hero-buttons">
-          <button className="primary-btn">
-            View My Work →
-          </button>
-
-          <button className="secondary-btn">
-            Contact Me ✉
-          </button>
+        <div className="hero-actions">
+          <a className="btn primary" href="#projects">
+            Explore Projects ↗
+          </a>
+          <a className="btn secondary" href="#contact">
+            Contact Me
+          </a>
         </div>
 
-        <div className="social-icons">
-          <span>GitHub</span>
-          <span>LinkedIn</span>
-          <span>Twitter</span>
-          <span>Instagram</span>
+        <div className="social-text">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
         </div>
-
       </div>
 
-      <div className="hero-image">
-        <div className="glow"></div>
-
-        <img
-          src="/profile.jpg"
-          alt="Profile"
-        />
+      <div className="hero-visual">
+        <div className="orbit orbit-one"></div>
+        <div className="orbit orbit-two"></div>
+        <div className="avatar">DS</div>
+        <span className="floating-code">{"< />"}</span>
+        <span className="floating-star">✦</span>
       </div>
-
     </section>
   );
 }
-
-export default Hero;

@@ -1,23 +1,20 @@
-function Footer() {
-  return (
-    <footer id="contact">
+import { portfolio } from "../data";
 
-      <h2>Let's Work Together</h2>
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <a className="logo" href="#home">
+        Dev<span>Portfolio.</span>
+      </a>
 
       <p>
-        Have a project in mind? Let's create something amazing.
+        Designed and built with React.js by {portfolio.name}.
       </p>
 
-      <button className="primary-btn">
-        Contact Me →
-      </button>
-
+      <a href="#home">Back to top ↑</a>
       <p className="copyright">
-        © 2026 Dev Srivastav. All Rights Reserved.
+        © {new Date().getFullYear()} {portfolio.name}. All rights reserved.
       </p>
-
     </footer>
   );
 }
-
-export default Footer;

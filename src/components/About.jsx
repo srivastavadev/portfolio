@@ -1,39 +1,40 @@
-function About() {
+import { portfolio } from "../data";
+
+export default function About() {
   return (
-    <section className="about" id="about">
-
-      <div className="about-box">
-
-        <h2>👤 About Me</h2>
-
-        <p>
-          I'm a passionate Frontend Developer with a strong
-          foundation in HTML, CSS, JavaScript and modern
-          frameworks like React.
-        </p>
-
-        <p>
-          I love turning ideas into real-world,
-          responsive and beautiful websites.
-        </p>
-
-        <div className="details">
-
-          {/* <p>📅 20 July 2003</p> */}
-          <p>📧 devsri2908@gmail.com</p>
-          <p>📍 India</p>
-          <p>📞 +91 7428101516</p>
-
-        </div>
-
-        <button className="outline-btn">
-          More About Me →
-        </button>
-
+    <section className="section" id="about">
+      <div className="section-heading">
+        <p className="eyebrow">GET TO KNOW ME</p>
+        <h2>About <span>Me</span></h2>
       </div>
 
+      <div className="about-card">
+        <div className="about-icon">{"{ DS }"}</div>
+
+        <div>
+          <h3>Aspiring Web Developer</h3>
+          <p>{portfolio.about}</p>
+          <p>📍 {portfolio.location}</p>
+          <p>✉️ {portfolio.email}</p>
+
+          <a className="btn primary" href="#contact">
+            Let's Connect
+          </a>
+        </div>
+      </div>
+
+      <div className="education">
+        <h3>My Education</h3>
+        {portfolio.education.map((item) => (
+          <div className="education-item" key={item.course}>
+            <div>
+              <h4>{item.course}</h4>
+              <p>{item.college}</p>
+            </div>
+            <span className="year">{item.year}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
-
-export default About;
